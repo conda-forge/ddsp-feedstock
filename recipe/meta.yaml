@@ -1,5 +1,5 @@
 {% set name = "ddsp" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fe6115ace562979fbb4a30db3bf328a2d17042e9cf784a8f48ec3aeecd35e28e
+  sha256: f5db60271d3a5327f5be4845dc9d4b48154df4e73f76020864adbe6f5f0d1c59
 
 build:
   number: 0
@@ -54,7 +54,7 @@ about:
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
-  summary: "Differentiable Digital Signal Processing"
+  summary: Differentiable Digital Signal Processing
   doc_url: https://pypi.org/project/ddsp/
   dev_url: https://github.com/magenta/ddsp
 
