@@ -26,7 +26,6 @@ requirements:
     - crepe
     - future
     - gin-config
-    - librosa
     - numpy
     - pydub
     - python
@@ -35,7 +34,7 @@ requirements:
     - tensorflow
     - tensorflow-datasets
     - apache-beam  # [unix]
-    - numba
+    - numba <0.50
 
 test:
   imports:
