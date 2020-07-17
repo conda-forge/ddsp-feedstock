@@ -16,7 +16,7 @@ build:
     - ddsp_prepare_tfrecord = ddsp.training.data_preparation.prepare_tfrecord:console_entry_point
   script: {{ PYTHON }} -m pip install . -vv
 
-requirements:
+requirements: 
   host:
     - python
     - pip
