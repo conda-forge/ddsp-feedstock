@@ -43,8 +43,8 @@ requirements:
     - apache-beam  # [unix]
 
 test:
-  source_files:
-    - gin/
+  # source_files:
+  #   - gin/
   imports:
     - ddsp
     - ddsp.colab
