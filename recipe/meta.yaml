@@ -37,6 +37,8 @@ requirements:
     - tensorflow-datasets
     - tensorflow-probability ==0.7
     - mir_eval
+    - apache-beam  # [unix]
+    - python-avro  # [unix]
 
 test:
   imports:
