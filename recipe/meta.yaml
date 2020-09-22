@@ -35,7 +35,7 @@ requirements:
     - six
     - tensorflow
     - tensorflow-datasets
-    - tensorflow-probability
+    - tensorflow-probability ==0.6
     - apache-beam  # [unix]
 
 test:
