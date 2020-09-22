@@ -33,7 +33,7 @@ requirements:
     - python
     - scipy
     - six
-    - tensorflow
+    - tensorflow >=1.15
     - tensorflow-datasets
     - tensorflow-probability
     - apache-beam  # [unix]
