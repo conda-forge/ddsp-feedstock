@@ -14,7 +14,10 @@ build:
   entry_points:
     - ddsp_run = ddsp.training.ddsp_run:console_entry_point
     - ddsp_prepare_tfrecord = ddsp.training.data_preparation.prepare_tfrecord:console_entry_point
-  script: {{ PYTHON }} -m pip install . -vv
+  script: 
+    - echo "LS ROOT"  # [unix]
+    - ls  # [unix]
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -40,6 +43,8 @@ requirements:
     - apache-beam  # [unix]
 
 test:
+  source_files:
+    - gin/
   imports:
     - ddsp
     - ddsp.colab
