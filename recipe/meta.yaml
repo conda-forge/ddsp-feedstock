@@ -28,6 +28,7 @@ requirements:
     - gin-config
     - librosa
     - numpy
+    - numba <0.50
     - pydub
     - python
     - scipy
@@ -42,6 +43,7 @@ test:
     - ddsp
     - ddsp.colab
     - ddsp.training
+    - ddsp.training.data_preparation  # [unix]
     - ddsp.training.gin
     - ddsp.training.gin.datasets
     - ddsp.training.gin.models
