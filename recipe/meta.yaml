@@ -49,7 +49,7 @@ test:
     - ddsp
     - ddsp.colab
     - ddsp.training
-    - ddsp.training.data_preparation  # [unix]
+    # - ddsp.training.data_preparation  # [unix]
     - ddsp.training.gin
     - ddsp.training.gin.datasets
     - ddsp.training.gin.models
