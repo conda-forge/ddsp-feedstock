@@ -28,8 +28,6 @@ requirements:
     - gin-config
     - librosa
     - numpy
-    - ffmpeg
-    - ffmpeg-python
     - pydub
     - python
     - scipy
