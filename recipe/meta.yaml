@@ -29,6 +29,8 @@ requirements:
     - librosa
     - numpy
     - numba <0.50
+    - ffmpeg
+    - ffmpeg-python
     - pydub
     - python
     - scipy
