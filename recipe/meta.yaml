@@ -28,7 +28,6 @@ requirements:
     - gin-config
     - librosa
     - numpy
-    - numba <0.50
     - ffmpeg
     - ffmpeg-python
     - pydub
@@ -39,15 +38,12 @@ requirements:
     - tensorflow-datasets
     - tensorflow-probability ==0.7
     - mir_eval
-    - apache-beam  # [unix]
-    - python-avro  # [unix]
 
 test:
   imports:
     - ddsp
     - ddsp.colab
     - ddsp.training
-    - ddsp.training.data_preparation  # [unix]
     - ddsp.training.gin
     - ddsp.training.gin.datasets
     - ddsp.training.gin.models
