@@ -23,18 +23,26 @@ requirements:
     - pytest-runner
   run:
     - absl-py
+    - cloudml-hypertune
     - crepe
     - future
     - gin-config
+    - google-cloud-storage
     - librosa
+    - mir_eval
+    - note_seq
+    - numba
     - numpy
     - pydub
     - python
     - scipy
     - six
     - tensorflow
-    - tensorflow-datasets
-    - apache-beam  # [unix]
+    - tensorflow-addons
+    - tensorflow-probability
+    - tensorflowjs
+    - tfds-nightly
+    - tflite_support
 
 test:
   imports:
