@@ -23,15 +23,14 @@ requirements:
     - pytest-runner
   run:
     - absl-py
+    - apache-beam  # [unix]
     - cloudml-hypertune
     - crepe
     - future
     - gin-config
     - google-cloud-storage
     - librosa
-    - mir_eval
     - note_seq
-    - numba
     - numpy
     - pydub
     - python
@@ -39,10 +38,10 @@ requirements:
     - six
     - tensorflow
     - tensorflow-addons
-    - tensorflow-probability
+    - tensorflow-datasets
     - tensorflowjs
     - tfds-nightly
-    - tflite_support
+    - tflite_suppor
 
 test:
   imports:
