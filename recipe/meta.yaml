@@ -1,5 +1,5 @@
 {% set name = "ddsp" %}
-{% set version = "0.5.1" %}
+{% set version = "1.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e9b40d8f42983687eeddd97225a35530979720833216eb9f73abf291ffc8df13
+  sha256: 3788e88ab3cdafb923e8fdb9f10f2209c5e7e0844ebb1cd5b14a32e2b89a28f2
 
 build:
   number: 0
@@ -23,18 +23,25 @@ requirements:
     - pytest-runner
   run:
     - absl-py
+    - apache-beam  # [unix]
+    - cloudml-hypertune
     - crepe
     - future
     - gin-config
+    - google-cloud-storage
     - librosa
+    - note_seq
     - numpy
     - pydub
     - python
     - scipy
     - six
     - tensorflow
+    - tensorflow-addons
     - tensorflow-datasets
-    - apache-beam  # [unix]
+    - tensorflowjs
+    - tfds-nightly
+    - tflite_support
 
 test:
   imports:
@@ -63,3 +70,4 @@ extra:
     - oblute
     - rluria14
     - ndmaxar
+    - Walter-0
