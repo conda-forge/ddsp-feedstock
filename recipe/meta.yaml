@@ -41,7 +41,7 @@ requirements:
     - tensorflow-datasets
     - tensorflowjs
     - tfds-nightly
-    - tflite_suppor
+    - tflite_support
 
 test:
   imports:
