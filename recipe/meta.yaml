@@ -1,65 +1,74 @@
 {% set name = "ddsp" %}
-{% set version = "0.5.1" %}
+{% set version = "1.6.5" %}
+
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e9b40d8f42983687eeddd97225a35530979720833216eb9f73abf291ffc8df13
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ddsp-{{ version }}.tar.gz
+  sha256: e6a72710cf018955ac41662f04d0c6e3e2be8c20cc6121b1263e5ee9efe3c9b0
 
 build:
   number: 0
+  noarch: python
   entry_points:
+    - ddsp_export = ddsp.training.ddsp_export:console_entry_point
     - ddsp_run = ddsp.training.ddsp_run:console_entry_point
-    - ddsp_prepare_tfrecord = ddsp.training.data_preparation.prepare_tfrecord:console_entry_point
+    - ddsp_prepare_tfrecord = ddsp.training.data_preparation.ddsp_prepare_tfrecord:console_entry_point
+    - ddsp_generate_synthetic_dataset = ddsp.training.data_preparation.ddsp_generate_synthetic_dataset:console_entry_point
+    - ddsp_ai_platform = ddsp.training.docker.ddsp_ai_platform:console_entry_point
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
     - pip
     - pytest-runner
+    - python >=3.6
   run:
     - absl-py
-    - crepe
+    - cloudml-hypertune
+    - crepe >=0.0.11
     - future
-    - gin-config
+    - gin-config >=0.3.0
+    - google-cloud-storage
     - librosa
+    - mir_eval
+    - note-seq
+    - numba <0.50
     - numpy
     - pydub
-    - python
+    - python >=3.6
     - scipy
     - six
-    - tensorflow
+    - tensorflow >2.5
+    - tensorflow-addons
     - tensorflow-datasets
-    - apache-beam  # [unix]
+    - tensorflow-probability
+    - tensorflowjs
+    - tflite-support
 
 test:
   imports:
     - ddsp
     - ddsp.colab
-    - ddsp.training
-    - ddsp.training.data_preparation  # [unix]
-    - ddsp.training.gin
-    - ddsp.training.gin.datasets
-    - ddsp.training.gin.models
-    - ddsp.training.gin.optimization
-    - ddsp.training.gin.papers
-    - ddsp.training.gin.papers.iclr2020
+  commands:
+    - pip check
+    - ddsp_export --help
+    - ddsp_run --help
+    - ddsp_prepare_tfrecord --help
+    - ddsp_generate_synthetic_dataset --help
+    - ddsp_ai_platform --help
+  requires:
+    - pip
 
 about:
   home: http://github.com/magenta/ddsp
-  license: Apache-2.0
-  license_family: APACHE
-  license_file: LICENSE
   summary: Differentiable Digital Signal Processing
-  doc_url: https://pypi.org/project/ddsp/
-  dev_url: https://github.com/magenta/ddsp
+  license: MIT
+  license_file: .eggs/pytest_runner-5.3.1-py3.8.egg/EGG-INFO/LICENSE
 
 extra:
   recipe-maintainers:
-    - oblute
-    - rluria14
-    - ndmaxar
+    - AddYourGitHubIdHere

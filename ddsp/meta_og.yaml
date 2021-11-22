@@ -1,0 +1,65 @@
+{% set name = "ddsp" %}
+{% set version = "0.5.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: e9b40d8f42983687eeddd97225a35530979720833216eb9f73abf291ffc8df13
+
+build:
+  number: 0
+  entry_points:
+    - ddsp_run = ddsp.training.ddsp_run:console_entry_point
+    - ddsp_prepare_tfrecord = ddsp.training.data_preparation.prepare_tfrecord:console_entry_point
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python
+    - pip
+    - pytest-runner
+  run:
+    - absl-py
+    - crepe
+    - future
+    - gin-config
+    - librosa
+    - numpy
+    - pydub
+    - python
+    - scipy
+    - six
+    - tensorflow
+    - tensorflow-datasets
+    - apache-beam  # [unix]
+
+test:
+  imports:
+    - ddsp
+    - ddsp.colab
+    - ddsp.training
+    - ddsp.training.data_preparation  # [unix]
+    - ddsp.training.gin
+    - ddsp.training.gin.datasets
+    - ddsp.training.gin.models
+    - ddsp.training.gin.optimization
+    - ddsp.training.gin.papers
+    - ddsp.training.gin.papers.iclr2020
+
+about:
+  home: http://github.com/magenta/ddsp
+  license: Apache-2.0
+  license_family: APACHE
+  license_file: LICENSE
+  summary: Differentiable Digital Signal Processing
+  doc_url: https://pypi.org/project/ddsp/
+  dev_url: https://github.com/magenta/ddsp
+
+extra:
+  recipe-maintainers:
+    - oblute
+    - rluria14
+    - ndmaxar
