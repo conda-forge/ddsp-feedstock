@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ddsp-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: e6a72710cf018955ac41662f04d0c6e3e2be8c20cc6121b1263e5ee9efe3c9b0
 
 build:
@@ -65,10 +65,16 @@ test:
 
 about:
   home: http://github.com/magenta/ddsp
+  license: Apache-2.0
+  license_family: APACHE
+  license_file: LICENSE
   summary: Differentiable Digital Signal Processing
-  license: MIT
-  license_file: .eggs/pytest_runner-5.3.1-py3.8.egg/EGG-INFO/LICENSE
+  doc_url: https://pypi.org/project/ddsp/
+  dev_url: https://github.com/magenta/ddsp
 
 extra:
   recipe-maintainers:
-    - AddYourGitHubIdHere
+    - oblute
+    - rluria14
+    - ndmaxar
+    - mxr-conda
