@@ -42,7 +42,7 @@ requirements:
     - python >=3.6
     - scipy
     - six
-    - tensorflow >2.5
+    - tensorflow
     - tensorflow-addons
     - tensorflow-datasets
     - tensorflow-probability
