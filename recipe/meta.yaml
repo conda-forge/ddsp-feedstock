@@ -28,14 +28,12 @@ requirements:
     - python >=3.6
   run:
     - absl-py
-    - cloudml-hypertune
     - crepe >=0.0.11
     - future
     - gin-config >=0.3.0
     - google-cloud-storage
     - librosa
     - mir_eval
-    - note-seq
     - numba <0.50
     - numpy
     - pydub
@@ -43,11 +41,8 @@ requirements:
     - scipy
     - six
     - tensorflow
-    - tensorflow-addons
     - tensorflow-datasets
     - tensorflow-probability
-    - tensorflowjs
-    - tflite-support
 
 test:
   imports:
