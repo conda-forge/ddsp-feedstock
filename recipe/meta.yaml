@@ -1,5 +1,5 @@
 {% set name = "ddsp" %}
-{% set version = "0.5.1" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e9b40d8f42983687eeddd97225a35530979720833216eb9f73abf291ffc8df13
+  sha256: cf0771c408ff636c228cc18b70e261e59a7dff3e5b6f406f5edc6d0aea084c64
 
 build:
   number: 0
