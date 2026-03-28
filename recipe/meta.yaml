@@ -1,5 +1,5 @@
 {% set name = "ddsp" %}
-{% set version = "0.5.1" %}
+{% set version = "0.13.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e9b40d8f42983687eeddd97225a35530979720833216eb9f73abf291ffc8df13
+  sha256: e5738b778c21d6a5b1df633877d9f359d0e0b36fa4b2e4baa7f048323d5a1853
 
 build:
   number: 0
@@ -34,6 +34,8 @@ requirements:
     - six
     - tensorflow
     - tensorflow-datasets
+    - tensorflow-probability ==0.7.0
+    - mir_eval
     - apache-beam  # [unix]
 
 test:
